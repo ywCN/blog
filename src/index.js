@@ -5,6 +5,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
 import reducers from './reducers';
+import PostsIndex from './components/posts_index';
 
 // Do not need App component when using Router because 
 // we do not need a central single component.
@@ -15,7 +16,7 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
             <div>
-
+                <Route path="/" component={PostsIndex} />
             </div>
         </BrowserRouter>
     </Provider>
