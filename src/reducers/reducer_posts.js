@@ -9,7 +9,7 @@ export default function(state = null, action) {
             // console.log('using FETCH_POSTS');
             // lodash.mapKeys will return a new object 
             // with key===id in original object
-            return _.mapKeys(action.payload.date, 'id');
+            return _.mapKeys(action.payload.data, 'id'); // DATA!! not date
         default:
             // console.log('using default');
             return state;
