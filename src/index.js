@@ -4,11 +4,36 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter, Route } from 'react-router-dom';
 
-import App from './components/app';
 import reducers from './reducers';
+
+// Do not need App component when using Router because 
+// we do not need a central single component.
 
 const createStoreWithMiddleware = applyMiddleware()(createStore);
 
+ReactDOM.render(
+    <Provider store={createStoreWithMiddleware(reducers)}>
+        <BrowserRouter>
+            <div>
+
+            </div>
+        </BrowserRouter>
+    </Provider>
+    , document.querySelector('.container')
+);
+
+
+
+
+// Following is an example of how Router works
+// wrap with div because BrowserRouter only accepts 1 element
+// path and component are REQUIRED for Route
+
+// http://localhost:8080/hi will display Hello!
+// http://localhost:8080/later will display Bye!
+// http://localhost:8080/ooxx will display nothing
+
+/*
 class Hello extends React.Component {
     render() { return <div>Hello!</div> }
 }
@@ -19,18 +44,13 @@ class Bye extends React.Component {
 
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
-        {/* <App /> */}
         <BrowserRouter>
-            {/* wrap because BrowserRouter only accepts 1 element */}
             <div>
-                {/* path and component are required for Route */}
-                {/* http://localhost:8080/hi will display Hello! */}
                 <Route path="/hi" component={Hello} />
-                {/* http://localhost:8080/later will display Bye! */}
                 <Route path="/later" component={Bye} />
-                {/* http://localhost:8080/others will display nothing */}
             </div>
         </BrowserRouter>
     </Provider>
     , document.querySelector('.container')
 );
+*/
