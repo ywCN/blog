@@ -16,6 +16,7 @@ class PostsIndex extends Component {
     }
 
     render() {
+        console.log(this.props.posts);
         return (
             <div>
                 Posts Index
@@ -24,7 +25,11 @@ class PostsIndex extends Component {
     }
 }
 
+function mapStateToProps(state) {
+    return { posts: state.posts };
+}
+
 // this is a legit shortcut for wire up action creator with component
 // this is identical to using mapDispatchToProps function
 // we still have this.props.fetchPost in this component
-export default connect(null, { fetchPosts })(PostsIndex); // { fetchPosts: fetchPosts }
+export default connect(mapStateToProps, { fetchPosts })(PostsIndex); // { fetchPosts: fetchPosts }
