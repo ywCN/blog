@@ -109,7 +109,9 @@
     - some `components`/`containers` need `state` but do not need `action creator`
       - connect(`mapStateToProps`)(`ComponentName`)
   - if `mapStateToProps` or `mapDispatchToProps` is very simple, the connect function can directly accept an object instead of these functions
+    - this is identical to creating `mapStateToProps` or `mapDispatchToProps` and pass to `connect`
     - export default connect(null, { fetchPosts })(PostsIndex); // { fetchPosts: fetchPosts }
+    - in this shortcut, `connect` is still do `mapStateToProps` or `mapDispatchToProps` for us behind the scene
 
 ## Container
 - Whenever we forge a connection between a component and redux, this connection turns that component into a container. aka `smart component`.
