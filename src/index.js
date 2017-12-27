@@ -23,8 +23,11 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 {/* path and component are required for Route */}
+                {/* http://localhost:8080/hello will display Hello! */}
                 <Route path="/hello" component={Hello} />
+                {/* http://localhost:8080/hello will display Bye! */}
                 <Route path="/bye" component={Bye} />
+                {/* http://localhost:8080/others will display nothing */}
             </div>
         </BrowserRouter>
     </Provider>
