@@ -21,6 +21,7 @@ ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         {/* <App /> */}
         <BrowserRouter>
+            {/* wrap because BrowserRouter only accepts 1 element */}
             <div>
                 {/* path and component are required for Route */}
                 {/* http://localhost:8080/hello will display Hello! */}
