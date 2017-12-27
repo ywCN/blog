@@ -221,6 +221,7 @@
 
 
 ## [The Built-in React.Component](https://reactjs.org/docs/react-component.html)
+- Remeber, the methods we use inside our own component which are not created by us are inherited from Component. Just think about the `extends` keyword.
 
 ## [The Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
 - Each component has several “lifecycle methods” that you can override to run code at particular times in the process. 
