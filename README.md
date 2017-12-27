@@ -205,4 +205,7 @@
 
 ## Axios has a sole purpose which is making AJAX request.
 
+## redux promise vs redux thunk
+- As a general guide, you'll want to use Redux Thunk whenever you expect to have to make multiple requests, or have some logic to make a request and then do some computation on the response that comes back
+
 
