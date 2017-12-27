@@ -220,3 +220,32 @@
 - As a general guide, you'll want to use Redux Thunk whenever you expect to have to make multiple requests, or have some logic to make a request and then do some computation on the response that comes back
 
 
+## [The Built-in React.Component](https://reactjs.org/docs/react-component.html)
+
+## [The Component Lifecycle](https://reactjs.org/docs/react-component.html#the-component-lifecycle)
+- Each component has several “lifecycle methods” that you can override to run code at particular times in the process. 
+  - Methods prefixed with **will** are called right **before** something happens.
+  - Methods prefixed with **did** are called right **after** something happens.
+- Mounting
+  - These methods are called when an instance of a component is being created and inserted into the DOM:
+  - `constructor()`
+  - `componentWillMount()`
+  - `render()`
+  - `componentDidMount()`
+- Updating
+  - An update can be caused by changes to props or state. These methods are called when a component is being re-rendered:
+  - `componentWillReceiveProps()`
+  - `shouldComponentUpdate()`
+  - `componentWillUpdate()`
+  - `render()`
+  - `componentDidUpdate()`
+- Unmounting
+  - This method is called when a component is being removed from the DOM:
+  - `componentWillUnmount()`
+- Error Handling
+  - This method is called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
+  - `componentDidCatch()`
+
+
+
+
