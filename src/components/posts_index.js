@@ -1,7 +1,8 @@
-import _ from 'lodash';
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { fetchPosts } from '../actions'; //action creator
+import _ from "lodash";
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { fetchPosts } from "../actions"; //action creator
 
 class PostsIndex extends Component {
     // This function will be call by React immediately
@@ -13,24 +14,30 @@ class PostsIndex extends Component {
     // as soon as it can render something, which means when the
     // async stuff is resolved, React will re-render this component.
     componentDidMount() {
-        this.props.fetchPosts(); // fetchPosts injected by connect
+        this.props.fetchPosts(); // fetchPosts() injected by connect
     }
 
     renderPosts() {
         return _.map(this.props.posts, post => {
             return (
                 <li className="list-group-item" key={post.id}>
-                    {post.title}
+                    <Link to={`/posts/${post.id}`}>
+                        {post.title}
+                    </Link>
                 </li>
             );
         });
     }
 
     render() {
-        console.log(this.props.posts);
         return (
             <div>
-                <h3>Post</h3>
+                <div className="text-xs-right">
+                    <Link className="btn btn-primary" to="/posts/new">
+                        Add a Post
+                    </Link>
+                </div>
+                <h3>Posts</h3>
                 <ul className="list-group">
                     {this.renderPosts()}
                 </ul>
@@ -46,4 +53,4 @@ function mapStateToProps(state) {
 // this is a legit shortcut for wire up action creator with component
 // this is identical to using mapDispatchToProps function
 // we still have this.props.fetchPost in this component
-export default connect(mapStateToProps, { fetchPosts })(PostsIndex); // { fetchPosts: fetchPosts }
+export default connect(mapStateToProps, { fetchPosts })(PostsIndex);
