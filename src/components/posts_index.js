@@ -12,7 +12,7 @@ class PostsIndex extends Component {
     // as soon as it can render something, which means when the
     // async stuff is resolved, React will re-render this component.
     componentDidMount() {
-
+        this.props.fetchPosts(); // fetchPosts injected by connect
     }
 
     render() {
