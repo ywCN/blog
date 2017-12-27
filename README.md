@@ -101,6 +101,13 @@
   - `connect(mapStateToProps)(BookList)`
     - firstly, `connect` take `mapStateToProps` as argument and returns a function
     - then, the `returned function` will take `BookList` as argument and returns a `container`
+  - 3 common uses of `connect` 
+    - some `components`/`containers` need both `action creator` and `state`
+      - connect(`mapStateToProps`, `mapDispatchToProps`)(`ComponentName`)
+    - some `components`/`containers` need `action creator` but do not need `state`
+      - connect(`null`, `mapDispatchToProps`)(`ComponentName`)
+    - some `components`/`containers` need `state` but do not need `action creator`
+      - connect(`mapStateToProps`)(`ComponentName`)
 
 ## Container
 - Whenever we forge a connection between a component and redux, this connection turns that component into a container. aka `smart component`.
@@ -181,7 +188,7 @@
     - `import { bindActionCreators } from 'redux';`
     - `import { actionCreator } from '../actions/index';`
       - `actionCreator` is the exported function name in index.js
-3. create `mapDispatchToProps` function
+3. create `mapDispatchToProps` and/or `mapStateToProps` function
     ```
     - function mapDispatchToProps(dispatch) {
     -     return bindActionCreators({ actionCreator }, dispatch);
