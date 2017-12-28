@@ -10,10 +10,15 @@ export default function(state = {}, action) {
         case FETCH_POST:
             // ES5 
             // const post = action.payload.data; // get the object need to be appended
-            // const newState = { ...state }; // copy
+            // const newState = { ...state }; // deep copy
             // newState[post.id] = post; // edit copy
             // return newState; // return copy
-            // ES6
+
+            // ES6 key interpolation
+            // [] here is not creating array.
+            // It means whatever the action.payload.data.id is,
+            // make it a new key on this object using action.payload.data.id
+            // and set its value to action.payload.data
             return { ...state, [action.payload.data.id]: action.payload.data };
         // This reducer want to transfer [post1, post2] into {1:post1, 2: post2}
         case FETCH_POSTS:
