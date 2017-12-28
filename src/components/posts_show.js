@@ -45,6 +45,9 @@ class PostsShow extends Component {
     }
 }
 
+// the first argument is always a state,
+// the second argument is referred to as ownProps
+// this.props === ownProps
 function mapStateToProps({ posts }, ownProps) {
     return { post: posts[ownProps.match.params.id] };
 }
