@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import { Field, reduxForm } from "redux-form";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
+// action creator for posting blog, 
+// will be injected into this compoent by using connect
 import { createPost } from "../actions";
 
 class PostsNew extends Component {
@@ -25,6 +27,7 @@ class PostsNew extends Component {
         );
     }
 
+    // call an action creator
     onSubmit(values) {
         this.props.createPost(values, () => {
             this.props.history.push("/");
@@ -94,6 +97,7 @@ function validate(values) {
 }
 
 // reduxFrom is very similar to the connect function.
+// reduxFrom is also a connect helper.
 // reduxFrom helper function allows redux form to 
 // communicate directly from the component to the
 // reducers we already set up.
@@ -105,4 +109,8 @@ export default reduxForm({
     form: "PostsNewForm"
 // does not need state, only need to dispatch
 // { createPost } is the mapDispatchToProps shortcut
-})(connect(null, { createPost })(PostsNew));
+})( 
+    // This is how we stack up mutiple connect helpers.
+    // helpe1(helper2(mapStateToProps,mapDispatchToProps)(componentName));
+    connect(null, { createPost })(PostsNew)
+);
