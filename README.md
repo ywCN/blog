@@ -97,6 +97,7 @@
 - returns an object and whatever object is returned will be available to this component as props. 
 
 ## `connect` function
+- **`connect` is used to add additional properties to the connected component**
 - `connect` takes a function and make a component become a connected version which is a `container`
   - `connect(mapStateToProps)(BookList)`
     - firstly, `connect` take `mapStateToProps` as argument and returns a function
