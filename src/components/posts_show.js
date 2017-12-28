@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
+// User should be able to view and delete blog in this component
+// so we need to import 2 action creators.
 import { fetchPost, deletePost } from "../actions";
 
 class PostsShow extends Component {
