@@ -16,6 +16,7 @@ class PostsNew extends Component {
                 <label>{field.label}</label>
                 <input className="form-control" type="text" {...field.input} />
                 <div className="text-help">
+                    {/* if no error, no display */}
                     {touched ? error : ""}
                 </div>
             </div>
@@ -32,6 +33,8 @@ class PostsNew extends Component {
         const { handleSubmit } = this.props;
 
         return (
+            // This annoying stuff is because of reduxForm.
+            // Can just memorize this code.
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 {/* props in Field will be passed into this.renderField function
                 as an object in arugument. The function can access them by 
