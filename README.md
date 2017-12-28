@@ -97,21 +97,21 @@
 - returns an object and whatever object is returned will be available to this component as props. 
 
 ## `connect` function
-- `connect` takes a function and a component and produces a container
+- `connect` takes a function and make a component become a connected version which is a `container`
   - `connect(mapStateToProps)(BookList)`
     - firstly, `connect` take `mapStateToProps` as argument and returns a function
     - then, the `returned function` will take `BookList` as argument and returns a `container`
-  - 3 common uses of `connect` 
-    - some `components`/`containers` need both `action creator` and `state`
-      - connect(`mapStateToProps`, `mapDispatchToProps`)(`ComponentName`)
-    - some `components`/`containers` need `action creator` but do not need `state`
-      - connect(`null`, `mapDispatchToProps`)(`ComponentName`)
-    - some `components`/`containers` need `state` but do not need `action creator`
-      - connect(`mapStateToProps`)(`ComponentName`)
-  - if `mapStateToProps` or `mapDispatchToProps` is very simple, the connect function can directly accept an object instead of these functions
-    - this is identical to creating `mapStateToProps` or `mapDispatchToProps` and pass to `connect`
-    - export default connect(null, { fetchPosts })(PostsIndex); // { fetchPosts: fetchPosts }
-    - in this shortcut, `connect` is still do `mapStateToProps` or `mapDispatchToProps` for us behind the scene
+- 3 common uses of `connect` 
+  - some `components`/`containers` need both `action creator` and `state`
+    - connect(`mapStateToProps`, `mapDispatchToProps`)(`ComponentName`)
+  - some `components`/`containers` need `action creator` but do not need `state`
+    - connect(`null`, `mapDispatchToProps`)(`ComponentName`)
+  - some `components`/`containers` need `state` but do not need `action creator`
+    - connect(`mapStateToProps`)(`ComponentName`)
+- if `mapStateToProps` or `mapDispatchToProps` is very simple, the connect function can directly accept an object instead of these functions
+  - this is identical to creating `mapStateToProps` or `mapDispatchToProps` and pass to `connect`
+  - export default connect(null, { fetchPosts })(PostsIndex); // { fetchPosts: fetchPosts }
+  - in this shortcut, `connect` is still do `mapStateToProps` or `mapDispatchToProps` for us behind the scene
 
 ## Container
 - Whenever we forge a connection between a component and redux, this connection turns that component into a container. aka `smart component`.
@@ -125,6 +125,7 @@
 - Only the most parent component that uses a particular piece of state needs to be connected to redux. like LCA.
 - **Whenever state changes, the container/component will automatically re-rendered.**
 - **Whenever state changes, the new state will be automatically assigned to props of the container/component.**
+- container **will** export a connected version of component
 
 ## Action
 - Actions usually have 2 values.
