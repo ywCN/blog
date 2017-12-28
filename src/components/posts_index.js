@@ -21,8 +21,10 @@ class PostsIndex extends Component {
         return _.map(this.props.posts, post => {
             return (
                 <li className="list-group-item" key={post.id}>
-                    {/* Link is like the <a> in HTML */}
-                    {/* In fact, a Link is a <a> behind the scene */}
+                    {/* Link is like the <a> in HTML.
+                    In fact, a Link is a <a> behind the scene.
+                    The <a> is modified by React, React prevent some default
+                    behaviors of <a> */}
                     <Link to={`/posts/${post.id}`}>
                         {post.title}
                     </Link>
