@@ -22,6 +22,7 @@ class PostsIndex extends Component {
             return (
                 <li className="list-group-item" key={post.id}>
                     {/* Link is like the <a> in HTML */}
+                    {/* In fact, a Link is a <a> behind the scene */}
                     <Link to={`/posts/${post.id}`}>
                         {post.title}
                     </Link>
