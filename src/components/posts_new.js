@@ -78,6 +78,8 @@ function validate(values) {
 // communicate directly from the component to the
 // reducers we already set up.
 // the format is the same: reduxForm()()
+// We make the form name, like "PostsNewForm", unique
+// because we want to isolate states of different forms.
 export default reduxForm({
     validate,
     form: "PostsNewForm"
