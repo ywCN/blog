@@ -18,6 +18,8 @@ export function fetchPosts() {
     };
 }
 
+// will be called in posts_new.js
+// value is the object we want to send via the api
 export function createPost(values, callback) {
     const request = axios
         .post(`${ROOT_URL}/posts${API_KEY}`, values)
