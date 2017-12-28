@@ -5,7 +5,9 @@ import { connect } from "react-redux";
 import { createPost } from "../actions";
 
 class PostsNew extends Component {
-    renderField(field) {
+    renderField(field) { // field is a single piece of state
+        // the meta.error property is automatically added 
+        // to the Field object from the validate function 
         const { meta: { touched, error } } = field;
         const className = `form-group ${touched && error ? "has-danger" : ""}`;
 
@@ -57,6 +59,8 @@ class PostsNew extends Component {
 }
 
 // only check if empty input, can also check other by adding if
+// The names of error are made the same as in Field in order to
+// connect names in Fields
 function validate(values) {
     // console.log(values) -> { title: 'asdf', categories: 'asdf', content: 'asdf' }
     const errors = {};
