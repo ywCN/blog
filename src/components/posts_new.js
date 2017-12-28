@@ -8,7 +8,8 @@ class PostsNew extends Component {
     renderField(field) { // field is a single piece of state
         // the meta.error property is automatically added 
         // to the Field object from the validate function 
-        const { meta: { touched, error } } = field;
+        const { meta: { touched, error } } = field; // ES6 destructuring to access property, nested
+        // turn red if touched AND error
         const className = `form-group ${touched && error ? "has-danger" : ""}`;
 
         return (
