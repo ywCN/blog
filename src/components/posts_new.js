@@ -16,7 +16,8 @@ class PostsNew extends Component {
                 <label>{field.label}</label>
                 <input className="form-control" type="text" {...field.input} />
                 <div className="text-help">
-                    {/* if no error, no display */}
+                    {/* if touched, display error
+                    if not touched, display empty string */}
                     {touched ? error : ""}
                 </div>
             </div>
