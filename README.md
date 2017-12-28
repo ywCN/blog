@@ -249,6 +249,8 @@
   - This method is called when there is an error during rendering, in a lifecycle method, or in the constructor of any child component.
   - `componentDidCatch()`
 
-
+## reduxForm
+- reduxForm is **ONLY** responsible for handle state and validation of forms.
+- We need to take care of submission ourself.
 
 
