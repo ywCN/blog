@@ -18,13 +18,18 @@ const createStoreWithMiddleware = applyMiddleware(promise)(createStore);
 ReactDOM.render(
     <Provider store={createStoreWithMiddleware(reducers)}>
         <BrowserRouter>
-        <div>
-            <Switch>
-            <Route path="/posts/new" component={PostsNew} />
-            <Route path="/posts/:id" component={PostsShow} />
-            <Route path="/" component={PostsIndex} />
-            </Switch>
-        </div>
+            <div>
+                <Switch>
+                {/* Switch takes a collection of Routes, 
+                and it will only render the FIRST Route
+                that matches the url
+                So, most specific Url/Router should be on */}
+                top of all Routes
+                    <Route path="/posts/new" component={PostsNew} />
+                    <Route path="/posts/:id" component={PostsShow} />
+                    <Route path="/" component={PostsIndex} />
+                </Switch>
+            </div>
         </BrowserRouter>
     </Provider>,
     document.querySelector(".container")
