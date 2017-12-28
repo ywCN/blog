@@ -30,6 +30,10 @@ class PostsNew extends Component {
     // call an action creator
     onSubmit(values) {
         // createPost action creator is injected by connect
+        // This structure makes sure users will see the post
+        // they just create after they hit the submit button.
+        // Technically they wait a very short moment for 
+        // the completion of the API request.
         this.props.createPost(values, () => {
             //TODO: find out where this.props.history is from
             this.props.history.push("/");
