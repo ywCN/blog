@@ -26,7 +26,8 @@ ReactDOM.render(
                 So, the most specific Url/Router should be on 
                 top of all Routes*/}
                     <Route path="/posts/new" component={PostsNew} />
-                    {/* :id is like wildcard, React will take whatever and pass it to PostsShow component */}
+                    {/* :id is like wildcard, React will take whatever and pass it to PostsShow component
+                    :id can match 'new', so we need to put this line under /new */}
                     <Route path="/posts/:id" component={PostsShow} />
                     <Route path="/" component={PostsIndex} />
                 </Switch>
