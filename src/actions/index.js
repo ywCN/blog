@@ -22,7 +22,11 @@ export function fetchPosts() {
 // value is the object we want to send via the api
 export function createPost(values, callback) {
     const request = axios
+        // make the API request
         .post(`${ROOT_URL}/posts${API_KEY}`, values)
+        // after the request has been resolved,
+        // exectute callback(), and callback() will
+        // call the callback function we pass in
         .then(() => callback());
 
     return {
