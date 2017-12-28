@@ -35,6 +35,8 @@ export function createPost(values, callback) {
     };
 }
 
+// will be called in post_show.js
+// id will be use to create url for request
 export function fetchPost(id) {
     const request = axios.get(`${ROOT_URL}/posts/${id}${API_KEY}`);
 
