@@ -14,6 +14,16 @@
   - After: `this.setState({ videos });`
 - Whenever need to reference a javascript variable in JSX, {} is required.
   - for example: `<VideoList videos={this.state.videos}/>`
+- key interpolation
+  - example: `return { ...state, [post.id]: post };`
+    - [post.id] is not an Array
+    - `[post.id]: post` means whatever the `post.id` is, make it a new key on the object and set its value to `post`
+    - the ES5 version of this is:
+      ```
+      const newState = { ...state };
+      newState[post.id] = post;
+      return newState;
+      ```
 
 ## React Event Handler
 - onChange, onCLick, onOOXX
