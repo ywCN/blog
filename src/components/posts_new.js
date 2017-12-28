@@ -30,11 +30,18 @@ class PostsNew extends Component {
     }
 
     render() {
-        const { handleSubmit } = this.props;
+        // handleSubmit is from the connection between
+        // reduxForm and PostsNew, reduxForm adds a lot of 
+        // properties including handleSubmit to PostsNew component
+        const { handleSubmit } = this.props; // pull out a function
 
         return (
             // This annoying stuff is because of reduxForm.
             // Can just memorize this code.
+            // handleSubmit takes care of the reduxForm things
+            // like validation, if everything is okay, it will call
+            // the onSubmit function we created.
+            // bind because onSubmit will use 'this'.
             <form onSubmit={handleSubmit(this.onSubmit.bind(this))}>
                 {/* props in Field will be passed into this.renderField function
                 as an object in arugument. The function can access them by 
