@@ -29,6 +29,7 @@ class PostsNew extends Component {
 
     // call an action creator
     onSubmit(values) {
+        // createPost action creator is injected by connect
         this.props.createPost(values, () => {
             this.props.history.push("/");
         });
