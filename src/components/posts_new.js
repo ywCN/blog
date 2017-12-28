@@ -112,5 +112,7 @@ export default reduxForm({
 })( 
     // This is how we stack up mutiple connect helpers.
     // helpe1(helper2(mapStateToProps,mapDispatchToProps)(componentName));
+    // Since the following line returns a React component (connected 
+    // version of the component), so it is a valid input for reduxForm helper.
     connect(null, { createPost })(PostsNew)
 );
