@@ -49,6 +49,9 @@ class PostsShow extends Component {
 // the second argument is referred to as ownProps
 // this.props === ownProps
 function mapStateToProps({ posts }, ownProps) {
+    // We only return the single post we care about.
+    // posts[ownProps.match.params.id] make this.props.post
+    // only receive the single post we want.
     return { post: posts[ownProps.match.params.id] };
 }
 
