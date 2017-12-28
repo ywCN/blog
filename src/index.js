@@ -23,8 +23,8 @@ ReactDOM.render(
                 {/* Switch takes a collection of Routes, 
                 and it will only render the FIRST Route
                 that matches the url
-                So, most specific Url/Router should be on */}
-                top of all Routes
+                So, the most specific Url/Router should be on 
+                top of all Routes*/}
                     <Route path="/posts/new" component={PostsNew} />
                     <Route path="/posts/:id" component={PostsShow} />
                     <Route path="/" component={PostsIndex} />
