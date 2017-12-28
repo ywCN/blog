@@ -6,14 +6,16 @@ import { Link } from "react-router-dom";
 import { fetchPost, deletePost } from "../actions";
 
 class PostsShow extends Component {
+    // same mechamism in posts_index.js
     componentDidMount() {
+        // this.props.match.params is provided by React Router
         const { id } = this.props.match.params;
         this.props.fetchPost(id);
     }
 
     onDeleteClick() {
         const { id } = this.props.match.params;
-        //TODO: find out where this.props.history is from
+        // this.props.match.params is provided by React Router
         this.props.deletePost(id, () => {
             this.props.history.push("/");
         });

@@ -35,7 +35,7 @@ class PostsNew extends Component {
         // Technically they wait a very short moment for 
         // the completion of the API request.
         this.props.createPost(values, () => {
-            //TODO: find out where this.props.history is from
+            // this.props.history is provided by React Router
             this.props.history.push("/");
         });
     }
