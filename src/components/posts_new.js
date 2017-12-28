@@ -73,9 +73,14 @@ function validate(values) {
     return errors;
 }
 
-// does not need state, only need to dispatch
-// { createPost } is the mapDispatchToProps shortcut
+// reduxFrom is very similar to the connect function.
+// reduxFrom helper function allows redux form to 
+// communicate directly from the component to the
+// reducers we already set up.
+// the format is the same: reduxForm()()
 export default reduxForm({
     validate,
     form: "PostsNewForm"
+// does not need state, only need to dispatch
+// { createPost } is the mapDispatchToProps shortcut
 })(connect(null, { createPost })(PostsNew));
