@@ -73,6 +73,8 @@ function validate(values) {
     return errors;
 }
 
+// does not need state, only need to dispatch
+// { createPost } is the mapDispatchToProps shortcut
 export default reduxForm({
     validate,
     form: "PostsNewForm"
