@@ -128,12 +128,16 @@
 - **Whenever state changes, the new state will be automatically assigned to props of the container/component.**
 - container **will** export a connected version of component
 
-## Action
+## `Action`
 - Actions usually have 2 values.
   - `type`: describes the purpose of the action
   - `payload`: describe or clarifies the conditions of the action that is being triggered.
 
-## Flows of Stuffs in Redux
+## `Action Creator`
+- action creator creates action
+- Whenever we want to save data or make API requests of any type inside of a Redux application. We always want to think about action creators.
+
+## Flows of Stuffs in Redux Application
   1. user triggers an event, for example, click a button
   2. event listener will call an `action creator`
   3. `action creator` is a function that returns an object called `action`
@@ -185,7 +189,6 @@
   - If it is a promise, it will stop the action.
   - And then once the request finishes, it dispatches a new action of the same type but with a payload of the **resolved** request.
 - `Redux Promise Middleware` helps us to pre-process async action, so we do not need to work with Promise. Instead, we just work with data returned by async request.
-
 
 ## Container Setup Process
 1. In a **finished** component.
