@@ -169,7 +169,7 @@
   - An action creator is just a function that returns an action.
   - An action is just an object that flows through all of our different reducers.
   - Reducers can then use that action to produce a different value(state) for tis particular piece of state.
-- ![alt text](https://github.com/ywCN/weather-site/blob/master/diagram.png "Flow Diagram")
+- ![alt text](https://github.com/ywCN/blog/blob/master/flow.png "Flow Diagram")
 
 ## `Middleware` in `Redux`
 - `Middlewares` are functions that take an action.
