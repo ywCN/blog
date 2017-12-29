@@ -8,6 +8,20 @@
 ### most styles are from bootstrap
 ### Most notes are inherited from previous [notes](https://github.com/ywCN/weather-site/blob/master/README.md).
 
+## Common Mistakes
+1. forget exporting
+    - This will make imported things `undefined`
+    - this mistake produces warning in console.
+2. forget {} when importing
+    - This will make imported things `undefined`
+    - normally happen when importing name of action type in reducer
+      - reducers do nothing about actions
+    - can use console.log(TYPE) to find out
+    - This will NOT produce warning.
+3. Uncaught (in promis)
+    - check Promise object
+4. 
+
 
 ## ES6 Trick
 - use destructuring instead of props
