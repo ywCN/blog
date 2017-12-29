@@ -4,6 +4,9 @@ import { FETCH_POSTS, FETCH_POST, DELETE_POST } from "../actions";
 export default function(state = {}, action) {
     switch (action.type) {
         case DELETE_POST:
+            // lodash.omit will check the state object.
+            // If the state object contains the key of
+            // the post, omit will drop it and return a new object.
             return _.omit(state, action.payload);
         // fetch post and combine all existing posts
         // this reducer will fetch the post with given ID
