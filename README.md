@@ -267,3 +267,5 @@
 - We need to take care of submission ourself.
 
 
+## this.props.history
+- This is an Array used to save visiting history in browser.
