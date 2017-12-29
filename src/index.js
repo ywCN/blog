@@ -2,6 +2,10 @@ import React from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import { createStore, applyMiddleware } from "redux";
+// These components give our application the ability of navigation.
+// We will need to create different Route in the app
+// and we tie each of the Route to a particular path. When
+// user navigate to the path, it will show the corresponding component.
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import promise from "redux-promise";
 
@@ -26,8 +30,9 @@ ReactDOM.render(
                 So, the most specific Url/Router should be on 
                 top of all Routes*/}
                     <Route path="/posts/new" component={PostsNew} />
-                    {/* :id is like wildcard, React will take whatever and pass it to PostsShow component
-                    :id can match 'new', so we need to put this line under /new */}
+                    {/* : means wildcard, id is the name of the wildcard 
+                    React will take whatever and pass it to PostsShow component
+                    : can match 'new', so we need to put this line under /new */}
                     <Route path="/posts/:id" component={PostsShow} />
                     <Route path="/" component={PostsIndex} />
                 </Switch>
