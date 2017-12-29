@@ -4,6 +4,7 @@
 # [Useful Videos](https://www.udemy.com/react-redux/learn/v4/t/lecture/5691826?start=0)
 - [its repo](https://github.com/StephenGrider/RallyCodingWeekly)
 - About Firebase, Thunk, Form, Reselect, Animation, Modals
+- [Deploy](https://www.udemy.com/react-redux/learn/v4/t/lecture/5691864?start=0)
 
 ### most styles are from bootstrap
 ### Most notes are inherited from previous [notes](https://github.com/ywCN/weather-site/blob/master/README.md).
