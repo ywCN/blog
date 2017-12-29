@@ -269,3 +269,17 @@
 
 ## this.props.history
 - This is an Array used to save visiting history in browser.
+
+## `Redux` and `Redux-Thunk`
+- Vanilla Redux expect use to return an action, which is a plain JavaScript object.
+- `Redux-Thunk` enables `Redux` to return one more type which is a plain JavaScript funcion.
+  ```
+  const request = axios.get('https://....'); // async
+  return (dispatch) => {
+    request.then(({data}) => {
+      dispatch({ type: 'FETCH_INFO', payload: data });
+    })
+  };
+  ```
+
+
