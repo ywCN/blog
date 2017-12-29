@@ -24,6 +24,8 @@ class PostsShow extends Component {
     render() {
         const { post } = this.props;
 
+        // This checking is important because of the order of operation.
+        // The post property may not exist upon rendering.
         if (!post) {
             return <div>Loading...</div>;
         }
