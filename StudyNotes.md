@@ -1,3 +1,17 @@
+# Init and Deploy React Website on Heroku
+Replace $APP_NAME with a name for your unique app.
+```
+create-react-app $APP_NAME
+cd $APP_NAME
+git init
+heroku create $APP_NAME --buildpack https://github.com/mars/create-react-app-buildpack.git
+yarn install
+git add .
+git commit -m "Start with create-react-app"
+git push heroku master
+heroku open
+```
+
 # [Useful Videos For React Related Topics](https://www.udemy.com/react-redux/learn/v4/t/lecture/5691826?start=0)
 - [repo for the videos](https://github.com/StephenGrider/RallyCodingWeekly)
 - About Firebase, Thunk, Form, Reselect, Animation, Modals...
